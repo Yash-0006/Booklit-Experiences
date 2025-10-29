@@ -157,25 +157,17 @@ npm run dev
 
 ## 🧪 **Available Promo Codes**
 
-- `SAVE10` - ₹100 discountOpen [http://localhost:3000](http://localhost:3000) in your browser.
+- `SAVE10` - ₹100 discount
 
 - `FLAT100` - ₹100 discount  
 
-- `SAVE20` - ₹200 discount## 🏗 Project Structure
+- `SAVE20` - ₹200 discount
 
 - `WELCOME` - ₹50 discount
 
-- `NEWUSER` - ₹150 discount```
+- `NEWUSER` - ₹150 discount
 
-- `HOLIDAY` - ₹300 discountbooklit/
-
-├── app/                    # Next.js App Router
-
-## 🚀 **Deployment**│   ├── globals.css        # Global styles and CSS variables
-
-│   ├── layout.tsx         # Root layout component
-
-### Vercel (Recommended)│   ├── page.tsx           # Home page (experiences listing)
+- `HOLIDAY` - ₹300 discount
 
 ```bash│   ├── api/               # API routes
 

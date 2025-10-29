@@ -1,21 +1,17 @@
-# BookIt - Travel Experience Booking Platform# BookIt: Experiences & Slots
+# BookIt - Travel Experience Booking Platform
 
-## **Demo** : 
-
+## 🌐 **Live Demo**
+**🔗 [View Live Application](https://booklit-experiences.vercel.app/)**
 
 ## 🚀 **Features**
 
-- **Experience Browsing**: Browse 12+ curated travel experiences with search functionality## 🌟 Features
-
+- **Experience Browsing**: Browse 12+ curated travel experiences with search functionality
 - **Real-time Booking**: Interactive date/time slot selection with availability tracking
-
-- **Promo Code System**: Validate and apply discount codes with usage tracking### Frontend
-
-- **Form Validation**: Client-side validation using React Hook Form and Zod- **Modern Stack**: React + TypeScript with Next.js 16
-
+- **Promo Code System**: Validate and apply discount codes with usage tracking
+- **Form Validation**: Client-side validation using React Hook Form and Zod
+- **Modern Stack**: React + TypeScript with Next.js 16
 - **Responsive Design**: Mobile-first design with TailwindCSS
 - **Database Persistence**: MongoDB integration with auto-generated booking IDs
-- **Form Validation**: React Hook Form with Zod validation
 - **Duplicate Prevention**: Prevents same email from booking identical slots
 - **Loading States**: Smooth yellow loading spinners throughout the app
 - **User Experience**: Loading states, error handling, and intuitive navigation

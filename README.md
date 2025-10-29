@@ -1,9 +1,11 @@
-# BookIt - Travel Experience Booking Platform
+# BookIt - Travel Experience Booking Platform 
 
+  
 ## 🌐 **Live Demo**
 **🔗 [View Live Application](https://booklit-experiences.vercel.app/)**
 
-## 🚀 **Features**
+
+## 🚀 **Features** 
 
 - **Experience Browsing**: Browse 12+ curated travel experiences with search functionality
 - **Real-time Booking**: Interactive date/time slot selection with availability tracking
@@ -20,208 +22,103 @@
 ## 🛠 **Tech Stack**
 
 ### Frontend
-- **Frontend**: Next.js 16, React 19, TypeScript
+- **Framework**: Next.js 16, React 19, TypeScript
 - **Styling**: TailwindCSS with custom design system
+- **Form Handling**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Images**: Next.js Image optimization with Unsplash
 
 ### Backend
 - **API Routes**: RESTful APIs built with Next.js API routes
 - **Database**: MongoDB with Mongoose ODM
+- **Validation**: Server-side validation for all endpoints
+- **Deployment**: Vercel-ready configuration
 
-- **Validation**: React Hook Form + Zod schemas- **Validation**: Server-side validation for all endpoints
+## 📁 **Project Structure**
 
-- **Deployment**: Vercel-ready configuration- **Promo Codes**: Dynamic discount system
-
-
-
-## 📁 **Project Structure**### Pages
-
-```1. **Home Page**: Browse and search travel experiences
-
-booklit/2. **Details Page**: View experience details, select dates and time slots
-
-├── app/                     # Next.js app directory3. **Checkout Page**: Complete booking with validated forms
-
-│   ├── api/                 # API routes4. **Result Page**: Booking confirmation with reference ID
-
+```
+booklit/
+├── app/                     # Next.js app directory
+│   ├── api/                 # API routes
 │   │   ├── experiences/     # Experience endpoints
-
-│   │   ├── bookings/        # Booking management## 🚀 Live Demo
-
+│   │   ├── bookings/        # Booking management
 │   │   └── promo/validate/  # Promo code validation
-
-│   ├── checkout/            # Checkout flow**Live Application**: [https://booklit-experiences.vercel.app](https://booklit-experiences.vercel.app)
-
+│   ├── checkout/            # Checkout flow
 │   ├── details/[id]/        # Experience details
-
-│   └── result/              # Booking confirmation## 🛠 Tech Stack
-
+│   └── result/              # Booking confirmation
 ├── components/              # Reusable components
-
-│   ├── ui/                  # UI components (spinner only)- **Frontend**: Next.js 16, React 19, TypeScript
-
-│   └── header.tsx           # Main navigation- **Styling**: TailwindCSS 4, CSS Variables for theming
-
-├── lib/                     # Utility functions- **Form Handling**: React Hook Form + Zod validation
-
-│   ├── mongodb.ts           # Database connection- **Icons**: Lucide React
-
-│   └── seedDatabase.ts      # Data seeding- **Images**: Next.js Image optimization with Unsplash
-
-├── models/                  # Mongoose schemas- **Deployment**: Vercel (recommended) / Render / Railway
-
+│   ├── ui/                  # UI components (spinner only)
+│   └── header.tsx           # Main navigation
+├── lib/                     # Utility functions
+│   ├── mongodb.ts           # Database connection
+│   └── seedDatabase.ts      # Data seeding
+├── models/                  # Mongoose schemas
 │   ├── Experience.ts        # Experience model
-
-│   ├── Booking.ts           # Booking model## 📦 Installation & Setup
-
+│   ├── Booking.ts           # Booking model
 │   └── PromoCode.ts         # Promo code model
+├── types/                   # TypeScript interfaces
+└── .env.local              # Environment variables
+```
 
-├── types/                   # TypeScript interfaces### Prerequisites
+## ⚙️ **Installation & Setup**
 
-└── .env.local              # Environment variables- Node.js 18+ 
+### Prerequisites
+- Node.js 18+
+- MongoDB (local or MongoDB Atlas)
+- npm, yarn, or pnpm
 
-```- npm, yarn, or pnpm package manager
-
-
-
-## ⚙️ **Installation & Setup**### 1. Clone the Repository
-
+### 1. Clone and Install
 ```bash
+git clone https://github.com/Yash-0006/Booklit-Experiences.git
+cd booklit-experiences
+npm install
+```
 
-### Prerequisitesgit clone https://github.com/your-username/booklit-experiences.git
-
-- Node.js 18+cd booklit-experiences
-
-- MongoDB (local or MongoDB Atlas)```
-
-- npm or pnpm
-
-### 2. Install Dependencies
-
-### 1. Clone and Install```bash
-
-```bash# Using npm
-
-git clone <repository-url>npm install
-
-cd booklit
-
-npm install# Using yarn
-
-```yarn install
-
-
-
-### 2. Environment Setup# Using pnpm (recommended)
-
-Create `.env.local`:pnpm install
-
-```env```
-
+### 2. Environment Setup
+Create a `.env.local` file in the root directory:
+```env
 MONGODB_URI=mongodb://localhost:27017/booklit
+# OR for MongoDB Atlas:
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/booklit
+```
 
-# OR for MongoDB Atlas:### 3. Environment Setup
-
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/booklitCreate a `.env.local` file in the root directory:
-
-``````env
-
-# No environment variables required for local development
-
-### 3. Start Development Server# All data is managed in-memory for demo purposes
-
-```bash```
-
-npm run dev
-
-```### 4. Development Server
-
+### 3. Start Development Server
 ```bash
-
-Visit `http://localhost:3000`# Using npm
-
 npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🗄️ **Database Features**
 
-- **Auto-seeding**: Automatically populates 12 experiences and 6 promo codes# Using yarn
-
-- **Connection Caching**: Optimized MongoDB connectionsyarn dev
-
+- **Auto-seeding**: Automatically populates 12 experiences and 6 promo codes
+- **Connection Caching**: Optimized MongoDB connections
 - **Validation**: Schema-level data validation
-
-- **Relationships**: Experience-booking relationships with population# Using pnpm
-
-- **Indexing**: Unique booking IDs and promo codespnpm dev
-
-```
+- **Relationships**: Experience-booking relationships with population
+- **Indexing**: Unique booking IDs and promo codes
 
 ## 🧪 **Available Promo Codes**
 
 - `SAVE10` - ₹100 discount
-
 - `FLAT100` - ₹100 discount  
-
 - `SAVE20` - ₹200 discount
-
 - `WELCOME` - ₹50 discount
-
 - `NEWUSER` - ₹150 discount
-
 - `HOLIDAY` - ₹300 discount
 
-```bash│   ├── api/               # API routes
+## � **API Endpoints**
 
-npm run build│   │   ├── experiences/   # Experience data endpoints
+### Experiences
+- `GET /api/experiences` - List all experiences
+- `GET /api/experiences/[id]` - Get specific experience details
 
-vercel --prod│   │   ├── bookings/      # Booking management
-
-```│   │   └── promo/         # Promo code validation
-
-│   ├── details/[id]/      # Experience details page
-
-### Environment Variables│   ├── checkout/          # Booking checkout page
-
-- `MONGODB_URI` - MongoDB connection string│   └── result/            # Booking confirmation page
-
-├── components/            # Reusable UI components
-
-## 🧪 **Production Checklist**│   ├── header.tsx         # Navigation header
-
-- ✅ Database integration complete│   └── ui/                # UI component library
-
-- ✅ Form validation implemented  ├── hooks/                 # Custom React hooks
-
-- ✅ Error handling added├── lib/                   # Utility functions
-
-- ✅ Loading states optimized└── public/                # Static assets
-
-- ✅ Responsive design verified```
-
-- ✅ Unused components removed
-
-- ✅ Performance optimized## 🔧 API Endpoints
-
-
-
-## 📱 **Browser Support**### Experiences
-
-- Chrome 90+- `GET /api/experiences` - List all experiences
-
-- Firefox 88+- `GET /api/experiences/[id]` - Get specific experience details
-
-- Safari 14+
-
-- Edge 90+### Bookings  
-
+### Bookings  
 - `POST /api/bookings` - Create new booking
 
----
-
 ### Promo Codes
+- `POST /api/promo/validate` - Validate promo code
 
-**Built with ❤️ using Next.js 16 and React 19**- `POST /api/promo/validate` - Validate promo code
-
-## 🎯 Key Features
+## 🎯 **Key Features**
 
 ### Experience Browsing
 - Search and filter experiences
@@ -241,7 +138,7 @@ vercel --prod│   │   ├── bookings/      # Booking management
 - Sold-out indicators
 - Mobile-optimized interface
 
-## 💾 Data Model
+## 💾 **Data Models**
 
 ### Experience Object
 ```typescript
@@ -282,7 +179,7 @@ interface Booking {
 }
 ```
 
-## 🎨 Design System
+## 🎨 **Design System**
 
 ### Colors
 - **Primary**: Various shades for text and backgrounds
@@ -298,26 +195,18 @@ interface Booking {
 - Form inputs with focus states
 - Card layouts with hover effects
 
-## 🚀 Deployment
+## 🚀 **Deployment**
 
 ### Vercel (Recommended)
-1. Push code to GitHub repository
-2. Connect repository to Vercel
-3. Deploy automatically on every push
-
-### Manual Deployment
 ```bash
-# Build the application
 npm run build
-
-# Start production server
-npm start
+vercel --prod
 ```
 
 ### Environment Variables
-No additional environment variables required for production deployment.
+- `MONGODB_URI` - MongoDB connection string
 
-## 🧪 Testing the Application
+## 🧪 **Testing the Application**
 
 ### Complete Booking Flow Test
 1. **Home Page**: Browse experiences, use search functionality
@@ -331,7 +220,7 @@ No additional environment variables required for production deployment.
 - `SAVE20` - ₹200 discount
 - `WELCOME` - ₹50 discount
 
-## 🔧 Development Commands
+## 🔧 **Development Commands**
 
 ```bash
 # Development server
@@ -347,21 +236,38 @@ npm start
 npm run lint
 ```
 
-## 📱 Mobile Optimization
+## 📱 **Mobile Optimization**
 
 - Responsive grid layouts (1-2-4 columns)
 - Touch-friendly buttons and inputs
 - Optimized images with Next.js Image component
 - Mobile-first CSS approach
 
-## 🔒 Security Features
+## 🔒 **Security Features**
 
 - Input validation on both client and server
 - XSS protection through React's built-in security
-- SQL injection prevention (no database queries)
+- Duplicate booking prevention
 - Form validation with Zod schemas
 
-## 🤝 Contributing
+## 📱 **Browser Support**
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## 🧪 **Production Checklist**
+
+- ✅ Database integration complete
+- ✅ Form validation implemented  
+- ✅ Error handling added
+- ✅ Loading states optimized
+- ✅ Responsive design verified
+- ✅ Unused components removed
+- ✅ Performance optimized
+
+## 🤝 **Contributing**
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -369,17 +275,5 @@ npm run lint
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Unsplash](https://unsplash.com) for high-quality experience images
-- [Lucide React](https://lucide.dev) for beautiful icons
-- [TailwindCSS](https://tailwindcss.com) for utility-first styling
-- [Next.js](https://nextjs.org) for the amazing React framework
-
----
 
 **Built with ❤️ for seamless travel experience bookings**

@@ -16,6 +16,7 @@
 - **Responsive Design**: Mobile-first design with TailwindCSS
 - **Database Persistence**: MongoDB integration with auto-generated booking IDs
 - **Form Validation**: React Hook Form with Zod validation
+- **Duplicate Prevention**: Prevents same email from booking identical slots
 - **Loading States**: Smooth yellow loading spinners throughout the app
 - **User Experience**: Loading states, error handling, and intuitive navigation
 - **Real-time Updates**: Dynamic slot availability and pricing

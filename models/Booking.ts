@@ -94,6 +94,9 @@ const BookingSchema: Schema = new Schema({
   timestamps: true
 })
 
+// Create compound index for email, experienceId, date, and time to prevent duplicates
+BookingSchema.index({ email: 1, experienceId: 1, date: 1, time: 1 }, { unique: true })
+
 // Create a unique booking ID when saving
 BookingSchema.pre('save', function(next) {
   if (!this.bookingId) {

@@ -23,6 +23,22 @@ export async function POST(request: Request) {
       )
     }
 
+    // Check for duplicate booking (same email, experience, date, and time)
+    const existingBooking = await Booking.findOne({
+      email: email.toLowerCase(),
+      experienceId,
+      date,
+      time
+    })
+
+    if (existingBooking) {
+      console.log('Duplicate booking attempt detected:', { email, experienceId, date, time })
+      return NextResponse.json(
+        { error: "You have already booked this experience for the selected date and time. Please choose a different slot or date." }, 
+        { status: 409 }
+      )
+    }
+
     // Generate unique booking ID
     const timestamp = Date.now()
     const randomStr = Math.random().toString(36).substr(2, 4).toUpperCase()

@@ -35,6 +35,7 @@ export default function CheckoutPage() {
   const [loading, setLoading] = useState(false)
   const [promoLoading, setPromoLoading] = useState(false)
   const [promoMessage, setPromoMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
 
   const {
     register,
@@ -97,6 +98,7 @@ export default function CheckoutPage() {
 
     try {
       setLoading(true)
+      setErrorMessage("") // Clear previous errors
       const subtotal = bookingData.price * bookingData.quantity
       const taxes = Math.round(subtotal * 0.06)
       const total = subtotal + taxes - discount
@@ -133,11 +135,16 @@ export default function CheckoutPage() {
         sessionStorage.removeItem("bookingData")
         router.push("/result")
       } else {
-        alert(result.message || "Booking failed")
+        // Handle different error types
+        if (response.status === 409) {
+          setErrorMessage(result.error || "You have already booked this experience for the selected date and time.")
+        } else {
+          setErrorMessage(result.error || "Booking failed. Please try again.")
+        }
       }
     } catch (error) {
       console.error("Checkout error:", error)
-      alert("Error processing booking")
+      setErrorMessage("Error processing booking. Please check your connection and try again.")
     } finally {
       setLoading(false)
     }
@@ -175,6 +182,20 @@ export default function CheckoutPage() {
           <div className="lg:col-span-2">
             <div className="bg-card p-8 rounded-lg">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                {errorMessage && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                    <div className="flex items-start">
+                      <div className="shrink-0">
+                        <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-red-800">{errorMessage}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Full name <span className="text-red-500">*</span>
